@@ -37,7 +37,7 @@ public class Main {
                         opcion = 6;
                         break;
                     default: JOptionPane.showMessageDialog(null,
-                            "Opcion incorrecta, vuelva a ingresar nuevamente");
+                            "Vuelva a ingresar nuevamente", "Opcion Invalida", JOptionPane.ERROR_MESSAGE);
                 }
             } catch (NumberFormatException e){ }
         } while(opcion != 6);

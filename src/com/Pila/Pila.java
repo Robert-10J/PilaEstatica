@@ -1,14 +1,13 @@
 package com.Pila;
 import javax.swing.*;
 import java.util.Stack;
-
 public class Pila {
 
     Stack pil = new Stack();
     String pila [] = new String[7];
 
     public void insertar(){
-        for (int i = 0; i < 7; i++){
+        for (int i = 0; i < pila.length; i++){
             String dato = JOptionPane.showInputDialog(null,
                     "Ingrese al valor");
             pila[i] = dato;
@@ -32,7 +31,8 @@ public class Pila {
     }
 
     public void ultimoElemento(){
-        JOptionPane.showMessageDialog(null, "Ultimo elemento: " + pil.peek());
+        String pos = (String) pil.peek();
+        JOptionPane.showMessageDialog(null, pos);
     }
 
     public void estadoPila(){
