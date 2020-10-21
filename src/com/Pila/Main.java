@@ -17,7 +17,7 @@ public class Main {
                                 + "5. Indica estado de la pila\n"
                                 + "6. Salir"));
 
-                switch (opcion){
+               switch (opcion){
                     case 1:
                         obj.insertar();
                         break;

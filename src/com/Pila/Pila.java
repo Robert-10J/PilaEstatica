@@ -1,12 +1,18 @@
 package com.Pila;
 import javax.swing.*;
+import java.awt.*;
 import java.util.Stack;
 public class Pila {
 
     Stack pil = new Stack();
     String pila [] = new String[5];
+    int element = 0;
 
-    public void insertar(){
+    public boolean vacio(){
+        return element <= 0;
+    }
+
+    public void insertar() {
         for (int i = 0; i < pila.length; i++){
             String dato = JOptionPane.showInputDialog(null,
                     "Ingrese al valor");
@@ -14,15 +20,14 @@ public class Pila {
             pil.push(pila[i]);
         }
     }
+    public Object delete(){return pil.remove(pil.size() - 1);}
 
     public void eliminar(){
         if (pil== null || pil.empty()){
             JOptionPane.showMessageDialog(null,
                     "Por favor elija la opcion 1", "Mo hay datos", JOptionPane.WARNING_MESSAGE);
         } else {
-            /*String elem;
-            elem = (String) pil.remove(pil.size() - 1);*/
-            JOptionPane.showMessageDialog(null, "Se elimino " + pil.remove(pil.size() - 1));
+            JOptionPane.showMessageDialog(null, "Se elimino " + delete());
         }
     }
 
@@ -32,16 +37,14 @@ public class Pila {
             JOptionPane.showMessageDialog(null,
                     "Por favor elija la opcion 1", "Mo hay datos", JOptionPane.WARNING_MESSAGE);
         } else {
-            for (int i = pila.length - 1; i >=0; i--){
-                elementos += pila[i] + "\n";
+            for (int i = pil.size() - 1; i >=0; i--){
+                elementos += pil.get(i) + "\n";
             }
             JOptionPane.showMessageDialog(null,"Los elementos de la pila son\n" + elementos);
         }
     }
 
     public void ultimoElemento(){
-        /*String pos = (String) pil.peek();
-        JOptionPane.showMessageDialog(null, pos);*/
         if (pil== null || pil.empty()){
             JOptionPane.showMessageDialog(null,
                     "Por favor elija la opcion 1", "Mo hay datos", JOptionPane.WARNING_MESSAGE);
